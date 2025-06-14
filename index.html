@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Song+Myung&display=swap" rel="stylesheet">
 <style>
+
+    .animated-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* or contain */
+}
+
 html {
     height: 100%;
     width: 100%;
@@ -821,8 +829,8 @@ body{
                 <h style="text-align: center;">분리수거란?</h>
                 <a style="text-align: center;">폐기물을 재활용하거나 소각할 때 재질별로 분류하고 수집하는 과정</a>
             </div>
-            <div class="ray_2" onclick="btnClick1()">
-                <img src="./image/분리수거란.jpg" style="width: 100%;height: 100%; position: absolute;" class="animated-img">
+            <div class="ray_2" onclick="btnClick1()" style="position: relative; height: 250px; width: 90%; margin-top: 20px;">
+                <img src="./image/분리수거란.jpg" class="animated-img" alt="분리수거란">
             </div>
             <div class="ray_2" style="background-color: white; display: none;" id="Q1">
                 <button onclick="btnClick_e1()" class="btn_close_quiz">닫기</button>
@@ -836,8 +844,8 @@ body{
                     <div id="Q1_A" style="margin-top: 20px;"></div>
                 </div>
             </div>
-            <div class="ray_3" onclick="btnClick2()">
-                <img src="./image/분리수거란_2.jpg" style="width: 100%;height: 100%; position: absolute;" class="animated-img">
+            <div class="ray_3" onclick="btnClick2()" style="position: relative; height: 250px; width: 90%; margin-top: 20px;">
+                <img src="./image/분리수거란_2.jpg" class="animated-img" alt="분리수거란">
             </div>
             <div class="ray_3" style="background-color: white; display: none;" id="Q2">
                 <button onclick="btnClick_e2()" class="btn_close_quiz">닫기</button>
@@ -851,8 +859,8 @@ body{
                     <div id="Q2_A" style="margin-top: 20px;"></div>
                 </div>
             </div>
-            <div class="ray_4" onclick="btnClick3()">
-                <img src="./image/분리수거란_3.png" style="width: 100%;height: 100%; position: absolute;" class="animated-img">
+            <div class="ray_4" onclick="btnClick3()" style="position: relative; height: 250px; width: 90%; margin-top: 20px;">
+                <img src="./image/분리수거란_3.png" class="animated-img" alt="분리수거란">
             </div>
             <div class="ray_4" style="background-color: white; display: none;" id="Q3">
                 <button onclick="btnClick_e3()" class="btn_close_quiz">닫기</button>

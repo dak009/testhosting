@@ -783,10 +783,28 @@ body{
         top: 5px;
         right: 8px;
     }
-    #Q1, #Q2, #Q3 {
-        padding: 8px;
-        max-width: 300px;
-    }
+#Q1, #Q2, #Q3 {
+  position: fixed;           /* 뷰포트를 기준으로 고정 */
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 360px;
+  background: #E8F5E9;
+  border: 3px solid #689F38;
+  border-radius: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: none;             /* JS에서 visible 클래스 토글 */
+  z-index: 1001;
+}
+
+/* 팝업 열 때 사용되는 클래스 */
+#Q1.visible, #Q2.visible, #Q3.visible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
     #Q1_text, #Q2_text, #Q3_text {
         font-size: 18px;
         margin-bottom: 8px;
@@ -808,6 +826,47 @@ body{
         right: 5px;
     }
 }
+
+/* 팝업 컨테이너 */
+.quiz-popup {
+  position: fixed;             /* 뷰포트 기준 중앙 고정 */
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 360px;
+  background: #E8F5E9;
+  border: 3px solid #689F38;
+  border-radius: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: none;               /* JS로 .visible 토글 */
+  z-index: 1001;
+}
+
+/* 팝업 보이기 */
+.quiz-popup.visible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* 닫기 버튼 */
+.btn_close_quiz {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #FF5722;
+  color: white;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
 </style>
 </head>
 <body>
@@ -832,7 +891,7 @@ body{
             <div class="ray_2" onclick="btnClick1()" style="position: relative; height: 250px; width: 90%; margin-top: 20px;">
                 <img src="./image/분리수거란.jpg" class="animated-img" alt="분리수거란">
             </div>
-            <div class="ray_2" style="background-color: white; display: none;" id="Q1">
+            <div id="Q1" class="quiz-popup">
                 <button onclick="btnClick_e1()" class="btn_close_quiz">닫기</button>
                 <div style="display: flex;flex-direction: column;color: #000;text-align: center;justify-content: center;align-items: center; margin: 0;">
                     <p style="margin: 0;" id="Q1_text">퀴즈/ 과일망은 재활용이 될까?</p>
@@ -847,7 +906,7 @@ body{
             <div class="ray_3" onclick="btnClick2()" style="position: relative; height: 250px; width: 90%; margin-top: 20px;">
                 <img src="./image/분리수거란_2.jpg" class="animated-img" alt="분리수거란">
             </div>
-            <div class="ray_3" style="background-color: white; display: none;" id="Q2">
+            <div id="Q2" class="quiz-popup">
                 <button onclick="btnClick_e2()" class="btn_close_quiz">닫기</button>
                 <div style="display: flex;flex-direction: column;color: #000;text-align: center;justify-content: center;align-items: center; margin: 0;">
                     <p style="margin: 0;" id="Q2_text">퀴즈/ 영수증은 종이류일까 일반쓰레기일까?</p>
@@ -862,7 +921,7 @@ body{
             <div class="ray_4" onclick="btnClick3()" style="position: relative; height: 250px; width: 90%; margin-top: 20px;">
                 <img src="./image/분리수거란_3.png" class="animated-img" alt="분리수거란">
             </div>
-            <div class="ray_4" style="background-color: white; display: none;" id="Q3">
+            <div id="Q3" class="quiz-popup">
                 <button onclick="btnClick_e3()" class="btn_close_quiz">닫기</button>
                 <div style="display: flex;flex-direction: column;color: #000;text-align: center;justify-content: center;align-items: center; margin: 0;">
                     <p style="margin: 0;" id="Q3_text">퀴즈/ 도자기는 유리 쓰레기통에 버려야 한다</p>
